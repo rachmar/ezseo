@@ -6,7 +6,7 @@ use Livewire\Component;
 
 class Drawer extends Component
 {   
-    public string $form;
+    public string $panel;
 
     public array $options;
 
@@ -19,15 +19,22 @@ class Drawer extends Component
         'closeDrawer' => 'close'
     ];
 
-    public function open(string $form, array $options)
+    protected function options($options)
+    {
+        $options['form'] = $options['form'] ?? [];
+
+        $this->isConfirm = (isset($options['confirmEvents']) && count($options['confirmEvents']) > 0 ) ? true : false;
+
+        return $options;
+    }
+
+    public function open(string $panel, array $options)
     {   
-        $this->form = $form;   
+        $this->panel = $panel;   
 
         $this->isOpen = true;
 
-        $this->options = $options; 
-
-        $this->isConfirm = $options['isConfirm'] ?? false ;
+        $this->options = $this->options($options); 
     }
 
     public function confirm()
@@ -35,6 +42,7 @@ class Drawer extends Component
         $this->close();
 
         $noConfirmEvent = true;
+
         foreach ($this->options['confirmEvents'] as $eventName => $eventData) 
         {
             $this->emit($eventName, $eventData);
@@ -55,4 +63,5 @@ class Drawer extends Component
     {
         return view('livewire.modules.drawer');
     }
+        
 }

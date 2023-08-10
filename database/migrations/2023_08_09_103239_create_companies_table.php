@@ -11,15 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('classroom_courses', function (Blueprint $table) {
+        Schema::create('companies', function (Blueprint $table) {
             $table->id();
-            $table->integer('instructor_id');
-            $table->integer('term_id');
-            $table->integer('semester_id');
-            $table->integer('division_id');
-            $table->string('access_token')->unique();
+            $table->unsignedBigInteger('owner_id');
+            $table->foreign('owner_id')->references('id')->on('users');
             $table->string('name');
-            $table->text('description')->nullable();
+            $table->string('project_id')->unique();
+            $table->string('auth_token')->unique();
+            $table->string('space_url');
             $table->softDeletes();
             $table->timestamps();
         });
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('classroom_courses');
+        Schema::dropIfExists('companies');
     }
 };

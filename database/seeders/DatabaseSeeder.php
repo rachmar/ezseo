@@ -12,16 +12,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
-
-        \App\Models\User::factory()->create([
+        \App\Models\User::create([
             'name' => 'Rachmar Mohammad',
             'email' => 'rachmar.dev@gmail.com',
             'password' => bcrypt('adminadmin')
         ]);
 
-        $this->call(ClassroomDivisionSeeder::class);
-        $this->call(ClassroomSemesterSeeder::class);
-        $this->call(ClassroomTermSeeder::class);
+        \App\Models\Company::create([
+            'owner_id' => 1,
+            'name' => 'Sex Toy Stores',
+            'project_id' => '341c89fe-24f0-4265-8c1f-ba993b277d0c',
+            'auth_token' => 'PT5815ba2ad1fdb4cbfd59c5a5fe5c308b721d373231757abc',
+            'space_url' => 'riztheseowiz.signalwire.com'
+        ]);
+
     }
 }

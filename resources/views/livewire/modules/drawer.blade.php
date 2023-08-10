@@ -10,7 +10,7 @@
             @if($isConfirm)
                 <x-molecules.forms.confirmation />
             @else
-                @livewire($form, compact('options'))
+                @livewire($panel, compact('options'))
             @endif
         </div>
     @endif

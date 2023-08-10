@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
     <head>
 
         <meta charset="utf-8">
@@ -18,26 +17,25 @@
 
     <body class="bg-gray-50 dark:bg-gray-800">
         
-        <x-organisms.header />
+        @include('partials.header')
 
         <div class="flex pt-16 overflow-hidden bg-gray-50 dark:bg-gray-900">
 
-            <x-organisms.sidemenu />
+            @include('partials.sidebar')
 
             <div id="main-content" class="relative w-full h-full overflow-y-auto bg-gray-50 lg:ml-64 dark:bg-gray-900">
-                <div class="px-4 pt-6">
-                    {{ $slot }}
-                </div>
+                
+                {{ $slot }}
+
             </div>
 
         </div>
 
-        <x-organisms.modules />
+        @include('partials.modules')
 
         @livewireScripts
         
         @stack('scripts')
-
 
     </body>
 </html>

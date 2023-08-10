@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function () {
     Route::get('dashboard', App\Http\Livewire\Pages\Dashboard::class)->name('dashboard');
+    Route::get('companies', App\Http\Livewire\Pages\Companies\CompanyIndex::class)->name('companies');
 });
 
 require __DIR__.'/auth.php';

@@ -7,7 +7,7 @@
                 </div>
                 <div class="ml-3 text-sm font-normal">
                     <span class="mb-1 text-sm font-semibold text-gray-900 dark:text-white">{{ $title }}</span>
-                    <div class="mb-1 text-sm font-normal">{{ $message }}</div> 
+                    <div class="mb-1 text-sm font-normal dark:text-white">{{ $message }}</div> 
                 </div>
             </div>
         </div>
