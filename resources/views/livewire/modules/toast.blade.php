@@ -13,13 +13,3 @@
         </div>
     @endif
 </div>
-
-@push('scripts')
-    <script>
-        window.addEventListener('closeToastDispatch', event => {
-            setTimeout(() => {
-                window.livewire.emitTo('modules.toast','closeToast');
-            }, 3000)
-        })
-    </script>
-@endpush

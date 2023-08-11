@@ -31,9 +31,10 @@ class Toast extends Component
         $this->showToast = true;
 
         $this->title = $options['title'] ?? $this->defaultMessage['title'];
+
         $this->message = $options['message'] ?? $this->defaultMessage['message'];
 
-        $this->dispatchBrowserEvent('closeToastDispatch');
+        $this->dispatchBrowserEvent('closeToast');
     }
 
     public function close()

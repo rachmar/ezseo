@@ -1,5 +1,5 @@
 <div>
-    <x-organisms.form wire:submit.prevent="submit">
+    <x-organisms.form performAction="{{ $action }}">
         <div>
             <x-atoms.forms.label for="name">Name</x-atoms.label>
             <x-atoms.forms.textbox type="text" name="name" id="name" wire:model.defer="form.name" autocomplete="off"/>
@@ -20,10 +20,5 @@
             <x-atoms.forms.textbox type="text" name="space_url" id="space_url" wire:model.defer="form.space_url" autocomplete="off"/>
             <x-atoms.forms.validation for="form.space_url"/>
         </div>
-        <x-molecules.forms.submission>
-            <x-atoms.forms.button color="success" type="submit">
-                <x-atoms.icons.plus /> Submit
-            </x-atoms.forms.button>
-        </x-molecules.forms.submission>
     </x-organisms.form>
 </div>

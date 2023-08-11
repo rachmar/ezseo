@@ -1,5 +1,5 @@
 
 <div>
-@livewire('modules.drawer')
-@livewire('modules.toast')
+    @livewire('modules.form')
+    @livewire('modules.toast')
 </div>

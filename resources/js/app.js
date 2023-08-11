@@ -10,6 +10,14 @@ document.openDropdown = function(dropdownId) {
     }
 };
 
+document.addEventListener('closeToast', function () {
+    if (livewire) {
+        setTimeout(() => {
+            livewire.emitTo('modules.toast','closeToast');
+        }, 1000);
+    }
+});
+
 document.addEventListener('DOMContentLoaded', function () {
 
     const sidebar = document.getElementById('sidebar');
