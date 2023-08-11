@@ -2,7 +2,6 @@
 
 namespace App\Http\Livewire\Forms\Companies;
 
-use App\Http\Livewire\Traits\WithDrawer;
 use App\Http\Livewire\Traits\WithForm;
 use App\Http\Livewire\Traits\WithToast;
 use App\Models\Company;

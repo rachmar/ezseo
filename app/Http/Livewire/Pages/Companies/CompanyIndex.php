@@ -13,7 +13,6 @@ class CompanyIndex extends Component
 
     protected $listeners = [
         'companyIndexRefresh' => '$refresh',
-        'companyIndexDestroy' => 'destroy'
     ];
 
     public function render()
