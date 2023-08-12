@@ -11,7 +11,7 @@
             <x-atoms.forms.validation for="form.project_id"/>
         </div>
         <div>
-            <x-atoms.forms.label for="auth_token">Name</x-atoms.label>
+            <x-atoms.forms.label for="auth_token">Auth Token</x-atoms.label>
             <x-atoms.forms.textbox type="text" name="auth_token" id="auth_token" wire:model.defer="form.auth_token" autocomplete="off"/>
             <x-atoms.forms.validation for="form.auth_token"/>
         </div>

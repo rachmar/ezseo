@@ -1,6 +1,23 @@
 import 'flowbite';
 import { Dropdown } from 'flowbite';
 
+// document.querySelectorAll('[data-tooltip-target]').forEach(function ($triggerEl) {
+//     var tooltipId = $triggerEl.getAttribute('data-tooltip-target');
+//     var $tooltipEl = document.getElementById(tooltipId);
+//     if ($tooltipEl) {
+//         var triggerType = $triggerEl.getAttribute('data-tooltip-trigger');
+//         var placement = $triggerEl.getAttribute('data-tooltip-placement');
+//         new Tooltip($tooltipEl, $triggerEl, {
+//             placement: placement ? placement : Default.placement,
+//             triggerType: triggerType
+//                 ? triggerType
+//                 : Default.triggerType,
+//         });
+//     }
+//     else {
+//         console.error("The tooltip element with id \"".concat(tooltipId, "\" does not exist. Please check the data-tooltip-target attribute."));
+//     }
+// });
 
 document.openDropdown = function(dropdownId) {
     const dropdownEl = document.getElementById(dropdownId);
