@@ -10,7 +10,7 @@ class SignalWire
 {   
     public static function http(?Company $company, string $endpoint, string $method = 'GET', array $postData = [])
     {   
-        if (!isset($company->id)) { return ['data' => []]; }
+        if (!isset($company->id)) { return ['data' => [], 'message'=> 'No company found']; }
         
         $url = 'https://'.$company->space_url.'/'.$endpoint;
 

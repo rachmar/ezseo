@@ -1,23 +1,7 @@
 import 'flowbite';
 import { Dropdown } from 'flowbite';
-
-// document.querySelectorAll('[data-tooltip-target]').forEach(function ($triggerEl) {
-//     var tooltipId = $triggerEl.getAttribute('data-tooltip-target');
-//     var $tooltipEl = document.getElementById(tooltipId);
-//     if ($tooltipEl) {
-//         var triggerType = $triggerEl.getAttribute('data-tooltip-trigger');
-//         var placement = $triggerEl.getAttribute('data-tooltip-placement');
-//         new Tooltip($tooltipEl, $triggerEl, {
-//             placement: placement ? placement : Default.placement,
-//             triggerType: triggerType
-//                 ? triggerType
-//                 : Default.triggerType,
-//         });
-//     }
-//     else {
-//         console.error("The tooltip element with id \"".concat(tooltipId, "\" does not exist. Please check the data-tooltip-target attribute."));
-//     }
-// });
+import DataTable  from 'datatables.net-dt';
+import $ from 'jquery';
 
 document.openDropdown = function(dropdownId) {
     const dropdownEl = document.getElementById(dropdownId);
@@ -35,7 +19,37 @@ document.addEventListener('closeToast', function () {
     }
 });
 
+
+document.addEventListener('refreshComponent', function () {
+    var test = new DataTable('#example');
+    console.log(test)
+})
+
+document.addEventListener('playAudio', function () {
+
+    const existingAudio = document.querySelector("audio.playing");
+    if (existingAudio) {
+        existingAudio.pause();
+        existingAudio.classList.remove("playing");
+    }
+
+    const audio = document.getElementById("playAudio");
+
+    audio.addEventListener('ended', function () {
+        livewire.emit('playRecordingEnded');
+    });
+
+    audio.addEventListener('canplaythrough', function () {
+        audio.play();
+        audio.classList.add("playing");
+    });
+
+    audio.load();
+});
+
 document.addEventListener('DOMContentLoaded', function () {
+
+    $('#example').DataTable()
 
     const sidebar = document.getElementById('sidebar');
 
